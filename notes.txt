@@ -1,1 +1,3 @@
 http://api.icndb.com/jokes/random/10?limitTo=[nerdy]
+
+http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
