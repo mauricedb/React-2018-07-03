@@ -16,7 +16,7 @@ class Quotes extends Component {
         if (rsp.ok) {
           return rsp.json();
         } else {
-          Promise.reject({ message: rsp.statusMessage });
+          return Promise.reject({ message: rsp.statusMessage });
         }
       })
       .then(data => {
