@@ -20,26 +20,18 @@ class Quotes extends Component {
         }
       })
       .then(data => {
-        // const jokes = data.value;
-        // const {jokes} = this.state;
-        // this.setState({ jokes: [...this.state.jokes, ...data.value], loading: false });
-
         this.setState(oldState => ({
-          // jokes: [...oldState.jokes, ...data.value]
           jokes: data.value
         }));
-
-        // this.state.jokes = this.state.jokes.concat(data.value);
-        // this.forceUpdate();
       })
       .catch(err => {
         this.setState({ error: err, loading: false });
       });
   };
 
-  // componentDidMount(){
-  //   this.fetchMovies();
-  // }
+  componentDidMount() {
+    this.fetchQuotes('nerdy');
+  }
 
   render() {
     return (

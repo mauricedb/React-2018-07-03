@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The QuotesPresentation component Link renders correctly 1`] = `
+<div
+  onClick={[Function]}
+>
+  <h1>
+    Chuck Norris Quotes.
+  </h1>
+  There are 
+  1
+   jokes
+  <ul>
+    <li>
+      The joke
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`The QuotesPresentation component The quotes 1`] = `
+Array [
+  Object {
+    "id": 1,
+  },
+  Object {
+    "id": 2,
+  },
+  Object {
+    "id": 3,
+  },
+]
+`;

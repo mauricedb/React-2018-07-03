@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
-import SingleQuote from './SingleQuote'
+import propTypes from 'prop-types';
+import SingleQuote from './SingleQuote';
 
 class QuotesPresentation extends Component {
+  static propTypes = {
+    jokes: propTypes.array.isRequired,
+    loading: propTypes.bool,
+    error: propTypes.object
+  };
+
+  static defaultProps = {
+    jokes: []
+  };
+
   render() {
     const { jokes, loading, error } = this.props;
 
@@ -14,10 +25,10 @@ class QuotesPresentation extends Component {
     }
 
     return (
-      <div>
-        <h1>Chuck Norris Quotes</h1>
+      <div onClick={() => {}}>
+        <h1>Chuck Norris Quotes.</h1>
         There are {jokes.length} jokes
-        <ul>{jokes.map(joke => <SingleQuote key={joke.id} joke={joke}/>)}</ul>
+        <ul>{jokes.map(joke => <SingleQuote key={joke.id} joke={joke} />)}</ul>
       </div>
     );
   }
