@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 class ControlPanel extends Component {
   fetchNedryQuotes = () => {
@@ -12,8 +13,8 @@ class ControlPanel extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.fetchNedryQuotes}>Load nerdy quotes</button>
-        <button onClick={this.fetchExplicitQuptes}>Load explicit quotes</button>
+        <Button onClick={this.fetchNedryQuotes}>Load nerdy quotes</Button>
+        <Button onClick={this.fetchExplicitQuptes}>Load explicit quotes</Button>
       </div>
     );
   }

@@ -11,6 +11,7 @@ class Quotes extends Component {
   };
 
   fetchQuotes = category => {
+    this.setState({ loading: true });
     fetch(`http://api.icndb.com/jokes/random/10?limitTo=[${category}]`)
       .then(rsp => {
         if (rsp.ok) {
@@ -21,7 +22,8 @@ class Quotes extends Component {
       })
       .then(data => {
         this.setState(oldState => ({
-          jokes: data.value
+          jokes: data.value,
+          loading: false
         }));
       })
       .catch(err => {

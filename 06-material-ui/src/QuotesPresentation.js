@@ -17,7 +17,7 @@ class QuotesPresentation extends Component {
       <div>
         <h1>Chuck Norris Quotes</h1>
         There are {jokes.length} jokes
-        <ul>{jokes.map(joke => <SingleQuote key={joke.id} joke={joke}/>)}</ul>
+        {jokes.map(joke => <SingleQuote key={joke.id} joke={joke}/>)}
       </div>
     );
   }
