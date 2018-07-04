@@ -1,6 +1,5 @@
 .row {
   white-space: nowrap;
-
 }
 .row.header {
   display: inline-block;
@@ -21,4 +20,12 @@
 
 .column.header {
   font-weight: bold;
+}
+
+.small {
+  color: red;
+}
+
+.large {
+  color: green;
 }
