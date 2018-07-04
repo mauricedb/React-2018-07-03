@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
+import ControlPanel from './ControlPanel';
 import QuotesPresentation from './QuotesPresentation';
-const url = 'http://api.icndb.com/jokes/random/10?limitTo=[nerdy]';
 
 class Quotes extends Component {
   state = {
     jokes: [],
-    loading: true,
+    loading: false,
     error: null
   };
 
-  componentDidMount() {
-    fetch(url)
+  fetchQuotes = category => {
+    fetch(`http://api.icndb.com/jokes/random/10?limitTo=[${category}]`)
       .then(rsp => {
         if (rsp.ok) {
           return rsp.json();
@@ -20,20 +20,22 @@ class Quotes extends Component {
         }
       })
       .then(data => {
-        const jokes = data.value;
-        this.setState({ jokes, loading: false });
+        this.setState(oldState => ({
+          jokes: data.value
+        }));
       })
       .catch(err => {
-        console.log(err);
         this.setState({ error: err, loading: false });
       });
-  }
+  };
+
   render() {
-    // const { jokes } = this.state;
-
-    // return <QuotesPresentation jokes={jokes} />;
-
-    return <QuotesPresentation {...this.state} />;
+    return (
+      <Fragment>
+        <ControlPanel fetchQuotes={this.fetchQuotes} />
+        <QuotesPresentation {...this.state} />
+      </Fragment>
+    );
   }
 }
 
