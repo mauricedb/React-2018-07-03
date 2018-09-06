@@ -7,11 +7,11 @@ class MovieListItem extends Component {
     const { title, poster_path, overview, vote_average } = this.props;
     return (
       <div>
-        {title}
+        <h2> {title}</h2>
         <br />
         <img src={`//image.tmdb.org/t/p/w300${poster_path}`} />
         <br />
-        {overview}
+        <p>{overview}</p>
         <div className="vote-average">{vote_average}</div>
       </div>
     );
