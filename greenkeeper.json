@@ -1,0 +1,17 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "01-intro/package.json",
+        "02-cra/package.json",
+        "03-cra-ts/package.json",
+        "04-ajax/package.json",
+        "05-callbacks/package.json",
+        "06-material-ui/package.json",
+        "07-virtualized/package.json",
+        "08-testing/package.json",
+        "09-storybook/package.json"
+      ]
+    }
+  }
+}
